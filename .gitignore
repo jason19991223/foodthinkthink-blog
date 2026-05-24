@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.vercel
+dist
+*.log
+.env*
+!.env.example
+*.zip
+
+.vercel
