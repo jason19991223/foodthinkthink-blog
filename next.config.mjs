@@ -3,9 +3,13 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
+  outputFileTracingRoot: process.cwd(),
   output: "export",
   reactStrictMode: true,
-  trailingSlash: true
+  trailingSlash: true,
+  turbopack: {
+    root: process.cwd()
+  }
 };
 
 export default nextConfig;
