@@ -99,6 +99,9 @@ export default function RootLayout({
               </p>
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
+              <Link href="/source-policy" className="hover:text-ink">
+                資料來源與引用原則
+              </Link>
               <Link href="/disclaimer" className="hover:text-ink">
                 免責聲明
               </Link>
