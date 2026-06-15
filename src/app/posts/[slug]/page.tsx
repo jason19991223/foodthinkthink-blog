@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Comments } from "@/components/Comments";
+import { ShareActions } from "@/components/ShareActions";
 import { formatPostDate } from "@/lib/format";
 import {
   getAllPosts,
@@ -54,6 +55,7 @@ export default async function PostPage({
   }
 
   const post = await getPostBySlug(slug);
+  const postUrl = `https://foodthinkthink.com/posts/${post.slug}/`;
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
@@ -89,6 +91,11 @@ export default async function PostPage({
       <div
         className="article-content mt-10 rounded-lg border border-ink/10 bg-white p-6 shadow-soft sm:p-8"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+      />
+      <ShareActions
+        title={post.title}
+        description={post.description}
+        url={postUrl}
       />
       <Comments />
     </article>
